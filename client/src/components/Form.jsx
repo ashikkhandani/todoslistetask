@@ -48,8 +48,38 @@ const Form = ({ listSetter, msgSetter }) => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2>This is form part</h2>
+      <form className="task-form" onSubmit={send}>
+        <label htmlFor="task">Task :</label>
+        <input
+          type="text"
+          id="task"
+          name="task"
+          onChange={handleChange}
+          value={formContent.task}
+          placeholder="Woran denkst du gerade ?"
+          maxLength="18"
+        />
+        <label htmlFor="priotität">Priorität :</label>
+        <div className="range-container">
+          <div className="range">
+            <input
+              type="range"
+              name="priorität"
+              min="1"
+              max="5"
+              step="1"
+              onChange={priorityChange}
+              value={formContent.priorität}
+            />
+          </div>
+          <div className="counter-form">{formContent.priorität}</div>
+        </div>
+        <button type="submit" className="add-btn">
+          Add
+        </button>
+      </form>
     </div>
   );
 };
