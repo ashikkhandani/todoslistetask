@@ -3,13 +3,14 @@ import React from "react";
 // import axios from ("axios")
 // import files
 import Form from "./Form";
-import Item from "./Item";
-const List = () => {
+import ToDo from "./ToDo";
+const Done = () => {
   return (
     <div>
-      <h2>This is list part</h2>
+      <h2>This is done part</h2>
+      <Form />
     </div>
   );
 };
 
-export default List;
+export default Done;

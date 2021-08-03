@@ -77,7 +77,7 @@ const Form = ({ listSetter, msgSetter }) => {
           <div className="counter-form">{formContent.priorität}</div>
         </div>
         <button type="submit" className="add-btn">
-          Add
+          Hinzufügen
         </button>
       </form>
     </div>

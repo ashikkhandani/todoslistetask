@@ -1,6 +1,6 @@
 import React from "react";
 // import files 
-import List from "./components/List";
+import List from "./components/Done";
 import Footer from "./components/Footer";
 
 const App = () => {
