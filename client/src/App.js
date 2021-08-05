@@ -7,9 +7,10 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="app-container">
-      {/* <h1>hello world</h1>
-       */}
+      <h1 className="app-title">To-Do Liste Task</h1>
+
       <ToDosList />
+
       <Footer />
     </div>
   );

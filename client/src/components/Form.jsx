@@ -50,7 +50,7 @@ const Form = ({ listSetter, msgSetter }) => {
   return (
     <div className="form-container">
       <div className="form-center">
-        <h3 className="container-title">Woran denkst du gerade ?</h3>
+        <h4 className="container-title">Woran denkst du gerade ?</h4>
         <form className="task-form" onSubmit={send}>
           <label htmlFor="task">
             <p>Task : </p>

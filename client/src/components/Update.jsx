@@ -79,17 +79,17 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
           <div className="range-modal">
             <input
               type="range"
-              id="priority"
-              name="priority"
+              id="priorität"
+              name="priorität"
               min="1"
               max="5"
               step="1"
               onChange={priorityChange}
-              value={formContent.priority}
+              value={formContent.priorität}
             />
           </div>
           <div className="modal-counter">
-            <p>{formContent.priority}</p>
+            <p>{formContent.priorität}</p>
           </div>
         </div>
         {/* buttons div */}

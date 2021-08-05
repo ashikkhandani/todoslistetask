@@ -1,22 +1,12 @@
+/********   Google Fonts    ********/
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&family=Potta+One&display=swap");
+
 :root {
   --black: #010101;
   --background: #021825ef;
   --white: #dff0e2;
   --fonts: #333333;
   --textCard: #fdfffc;
-
-  /* login and signup colours */
-  --color-green: rgba(52, 173, 133, 0.904);
-  --dash-background: rgba(138, 196, 178, 0.548);
-  --color-grey: #999;
-  --color-dark: #000;
-  --color-white: #fff;
-  --color-light: #eee;
-
-  --card-background: rgba(0, 62, 41, 0.4);
-
-  --hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
-  --returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 *,
@@ -31,24 +21,55 @@ html {
 }
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Potta One", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: var(--background); */
-  background-color: var(--white);
+  background-color: var(--background);
+  /* background-image: linear-gradient(
+    to right,
+    rgba(13, 14, 13, 0.815),
+    rgba(17, 17, 17, 0.89)
+  ); */
+}
+.app-container {
+  width: 100vw;
+  height: 100%;
+  /* background-image: linear-gradient(
+    to right,
+    rgba(13, 14, 13, 0.815),
+    rgba(17, 17, 17, 0.89)
+  ); */
+}
+.app-title {
+  width: 65vw;
+  font-size: 2.8rem;
+  color: var(--textCard);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-shadow: 5px 3px 7px rgba(35, 35, 35, 0.65);
+  background-image: linear-gradient(
+    to right,
+    rgba(7, 245, 233, 0.65),
+    rgba(4, 199, 248, 0.561)
+  );
 }
 .container-title {
-  font-size: 2.9rem;
-  font-weight: 400;
+  font-size: 2.2rem;
+  font-weight: 200;
   line-height: 1.7;
   letter-spacing: 1.3px;
   text-align: center;
-  text-shadow: 5px 3px 7px rgba(35, 35, 35, 0.65);
+  text-shadow: 3px 3px 7px rgba(35, 35, 35, 0.65);
 }
 .form-container {
   /* background-color: #333; */
-  width: 60vw;
-  height: 300px;
+  width: 65vw;
+  height: 320px;
   margin: 15px auto;
   border-radius: 5px;
   background-image: linear-gradient(
@@ -67,48 +88,59 @@ body {
   z-index: 0;
 }
 .form-center {
-  background-color: rgba(255, 255, 255, 0.705);
-  width: 450px;
+  background-color: rgba(233, 229, 229, 0.781);
+  width: 50%;
   height: 100%;
-  margin: 1px auto;
+  margin: 0 auto;
   padding: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 .task-form {
-  margin-top: 5px;
-  padding: 8px;
+  margin-top: 2px;
+  padding: 5px;
 }
 .task-form label {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   /* line-height: 1.2; */
   letter-spacing: 1.4px;
 }
 .task-form input {
-  width: 80%;
-  height: 30px;
+  font-family: "Potta One", cursive;
+  width: 90%;
+  height: 40px;
   margin-top: 8px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 7px;
   text-transform: capitalize;
   background-color: rgba(255, 255, 255, 0.65);
 }
 .add-btn {
+  font-family: "Potta One", cursive;
   width: 100px;
-  height: 30px;
-  border-radius: 5px;
+  height: 35px;
+  font-weight: 300;
+  border-radius: 7px;
   letter-spacing: 1.2px;
   background-image: linear-gradient(
     to right,
-    rgba(46, 224, 135, 0.623),
-    rgba(29, 180, 99, 0.726)
+    rgba(46, 224, 135, 0.671),
+    rgba(35, 226, 124, 0.794)
   );
+  cursor: pointer;
 }
+/* .add-btn:hover{
+  cursor: pointer;
+} */
 /* range-input */
 .range-container {
   width: 100%;
   margin-bottom: 4rem;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 .counter-form {
@@ -137,28 +169,126 @@ body {
   padding-top: 0.7rem;
   padding-left: calc(1rem / 3);
   padding-right: calc(1rem / 3);
+  cursor: pointer;
 }
 .message-container {
-  width: 60vw;
+  width: 65vw;
   height: 60px;
   margin: 5px auto;
   border-radius: 5px;
   background-image: linear-gradient(
     to right,
-    rgba(46, 224, 108, 0.623),
-    rgba(29, 180, 160, 0.726)
+    rgba(46, 243, 115, 0.712),
+    rgba(40, 245, 217, 0.89)
   );
 }
-.message-center {
-  /* text-align: center; */
-  padding: px;
-}
+
 .status-text {
   font-size: 2.2rem;
   letter-spacing: 1.4px;
   text-transform: capitalize;
   text-align: center;
-  text-shadow: 2px 4px 10px #5d5c5c;
+  text-shadow: 2px 3px 5px #a7a7a773;
   color: var(--fonts);
   padding: 15px;
+}
+/* .main-todo {
+  background-color: #fff;
+} */
+.todo-container {
+  width: 65vw;
+  height: 100%;
+  margin: 5px auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(167, 172, 169, 0.801),
+      rgba(87, 110, 99, 0.705)
+    ),
+    url("./images/donebc1.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  border-radius: 5px;
+}
+.todo-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+.task-organizer {
+  width: 60%;
+}
+.priority-container {
+  width: 30%;
+}
+
+.task-header {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 1.4px;
+  margin: 7px;
+  /* margin-left: 5px; */
+  padding: 7px;
+}
+.task-title {
+  font-size: 1.5rem;
+  letter-spacing: 1.3px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.btns-container {
+  width: 15%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px;
+}
+.child-btn {
+  margin: 7px;
+}
+.child-btn:hover {
+  box-shadow: 3px 5px 20px #1a1919;
+}
+.fas {
+  font-size: 25px;
+  cursor: pointer;
+  margin: 5px;
+  /* padding: 5px; */
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.fa-edit {
+  color: rgba(209, 136, 0, 0.842);
+}
+.fa-check-circle {
+  color: rgba(0, 128, 0, 0.876);
+}
+.fa-trash-alt {
+  color: rgba(214, 4, 4, 0.829);
+}
+.footer-title {
+  width: 65vw;
+  font-size: 1.5rem;
+  color: var(--fonts);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 1.3px;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(7, 245, 233, 0.65),
+    rgba(4, 199, 248, 0.698)
+  );
 }

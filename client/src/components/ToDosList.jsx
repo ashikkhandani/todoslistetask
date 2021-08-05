@@ -25,7 +25,7 @@ const ToDosList = () => {
   };
   // useEffect
   useEffect(() => {
-    setTimeout(fade, 2000);
+    setTimeout(fade, 4000);
   }, [msgCenter]);
 
   // delete item function
@@ -73,6 +73,8 @@ const ToDosList = () => {
           )}
         </div>
       </div>
+      <h2 className="app-title">Meine Liste</h2>
+
       {/* Display ToDosList Task list container */}
       <div className="task-list-container">
         {/* <h3>ToDo Liste :</h3> */}

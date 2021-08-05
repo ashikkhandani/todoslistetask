@@ -43,47 +43,58 @@ const DoneList = ({
   };
 
   return (
-    <div>
-      <h2>This is ToDo container</h2>
-      {visible ? (
-        <div className="todo-container">
-          {/*  delete button */}
-          <div className="delete-box">
-            <button type="button" onClick={del}>
-              Löschen
-            </button>
+    <div className="main-todo">
+      <div className="todo-container">
+        {visible ? (
+          <div className="todo-list-container">
+            {/* Task details div */}
+            <div className="task-organizer">
+              <h3 className="task-header">Task : </h3>
+              <br />
+              <p className="task-title">{task} </p>
+            </div>
+            {/* Priority div */}
+            <div className="priority-container">
+              <h3 className="task-header">Priorität :</h3>
+              <br />
+              <p className="task-title">{priorität} </p>
+            </div>
+            {/* buttons div */}
+            <div className="btns-container">
+              <div className="child-btn">
+                {/* update button */}
+                <button type="button" onClick={mod} className="update-btn">
+                  <i class="fas fa-edit"></i>
+
+                  {/* Bearbeiten */}
+                </button>
+              </div>
+              <div className="child-btn">
+                {/* done button */}
+                <button type="button" onClick={done} className="update-btn">
+                  <i class="fas fa-check-circle"></i>
+                  {/* Fertig */}
+                </button>
+              </div>
+              <div className="child-btn">
+                {/* delete button */}
+                <button type="button" onClick={del}>
+                  <i class="fas fa-trash-alt"></i>
+                  {/* Löschen */}
+                </button>
+              </div>
+            </div>
           </div>
-          {/* Task details div */}
-          <div className="task-organizer">
-            <p>Task : </p>
-            <h4>{task} </h4>
-          </div>
-          {/* Priority div */}
-          <div className="task-organizer">
-            <p>Priorität :</p>
-            <h4>{priorität} </h4>
-          </div>
-          {/* buttons div */}
-          <div className="btns-container">
-            {/* update button */}
-            <button type="button" onClick={mod} className="update-btn">
-              Bearbeiten
-            </button>
-            {/* done button */}
-            <button type="button" onClick={done} className="update-btn">
-              Fertig
-            </button>
-          </div>
-        </div>
-      ) : (
-        <UpdateModal
-          id={id}
-          task={task}
-          invisible={invisible}
-          msgSetter={msgSetter}
-          listSetter={listSetter}
-        />
-      )}
+        ) : (
+          <UpdateModal
+            id={id}
+            task={task}
+            invisible={invisible}
+            msgSetter={msgSetter}
+            listSetter={listSetter}
+          />
+        )}
+      </div>
     </div>
   );
 };
