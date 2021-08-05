@@ -1,7 +1,7 @@
-## ToDoListsTask-2021
+# ToDoListsTask-2021
 
 ---
 
-## Description :
+### Description :
 
-# This is a todo lists task with adding, removing, updating, displaying items functionalities
+#### This is a todo lists task with adding, removing, updating, displaying items functionalities
