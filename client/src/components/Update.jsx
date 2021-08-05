@@ -36,7 +36,7 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
   // send to backend  function
   const send = (e) => {
     e.preventDefault();
-    if (formContent.task!== "" || formContent.priorität !== null) {
+    if (formContent.task !== "" || formContent.priorität !== null) {
       // axios
       axios.post("/update", formContent).then((res) => {
         console.log(res.data, "Update");
@@ -64,7 +64,7 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
 
   return (
     <div className="update-container">
-      <form className="modal-form" onSubmit={send}>
+      <form className="task-form" onSubmit={send}>
         <label htmlFor="task">Task :</label>
         <input
           type="text"
@@ -75,8 +75,10 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
           placeholder={task}
           minLength="10"
         />
+        <label htmlFor="priorität">Priorität :</label>
+
         <div className="range-container">
-          <div className="range-modal">
+          <div className="range">
             <input
               type="range"
               id="priorität"
@@ -88,7 +90,7 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
               value={formContent.priorität}
             />
           </div>
-          <div className="modal-counter">
+          <div className="counter-form">
             <p>{formContent.priorität}</p>
           </div>
         </div>
@@ -99,8 +101,8 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
             Abbrechen
           </button>
           {/* done button */}
-          <button type="submit" className="fertig-btn">
-            Fertig
+          <button type="submit" className="add-btn">
+            Update
           </button>
         </div>
       </form>
