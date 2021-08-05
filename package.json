@@ -1,0 +1,23 @@
+{
+  "name": "todoslistetask",
+  "version": "1.0.0",
+  "description": "This a toDo list task",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix client\" \"npm start --prefix server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashikkhandani/todoslistetask.git"
+  },
+  "author": "Md. Ashik Ahammed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashikkhandani/todoslistetask/issues"
+  },
+  "homepage": "https://github.com/ashikkhandani/todoslistetask#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  },
+  "proxy": "http://localhost:5000"
+}

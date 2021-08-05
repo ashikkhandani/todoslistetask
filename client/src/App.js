@@ -1,6 +1,7 @@
 import React from "react";
-// import files 
-import List from "./components/Done";
+
+// import files
+import ToDosList from "./components/ToDosList";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
     <div className="app-container">
       {/* <h1>hello world</h1>
        */}
-      <List />
+      <ToDosList />
       <Footer />
     </div>
   );
