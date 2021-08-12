@@ -86,6 +86,7 @@ const DoneList = ({
             </div>
           </div>
         ) : (
+          // Passing data to Update model
           <UpdateModal
             id={id}
             task={task}

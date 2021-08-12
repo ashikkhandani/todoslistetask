@@ -13,6 +13,7 @@ const Form = ({ listSetter, msgSetter }) => {
 
   // handleChange function to add new value
   const handleChange = (e) => {
+    // updating state with new value
     setFormContent({
       ...formContent,
       task: e.target.value,
@@ -22,6 +23,8 @@ const Form = ({ listSetter, msgSetter }) => {
   // priority change function of tasks
   const priorityChange = (e) => {
     const number = parseInt(e.target.value);
+
+    // updating state with new value
     setFormContent({
       ...formContent,
       [e.target.name]: number,
@@ -31,7 +34,10 @@ const Form = ({ listSetter, msgSetter }) => {
   // send to backend function
   const send = (e) => {
     e.preventDefault();
+
+    // if condition
     if (formContent.task !== "" && formContent.priorität !== null) {
+      // axios
       axios.post("/add", formContent).then((res) => {
         msgSetter(res.data.msg);
         axios.get("/add").then((res) => {
@@ -41,6 +47,7 @@ const Form = ({ listSetter, msgSetter }) => {
     } else {
       msgSetter("Alle eingaben sind erforderlich!");
     }
+    // set the previous state
     setFormContent({
       task: "",
       priorität: 3,
@@ -55,7 +62,7 @@ const Form = ({ listSetter, msgSetter }) => {
           <label htmlFor="task">
             <p>Task : </p>
           </label>
-
+          {/* Input */}
           <input
             type="text"
             id="task"
@@ -68,8 +75,10 @@ const Form = ({ listSetter, msgSetter }) => {
           <label htmlFor="priotität">
             <p> Priorität : </p>
           </label>
+
           <div className="range-container">
             <div className="range">
+              {/* Priority Range */}
               <input
                 type="range"
                 name="priorität"
@@ -82,6 +91,7 @@ const Form = ({ listSetter, msgSetter }) => {
             </div>
             <div className="counter-form">{formContent.priorität}</div>
           </div>
+          {/* Button */}
           <button type="submit" className="add-btn">
             Hinzufügen
           </button>

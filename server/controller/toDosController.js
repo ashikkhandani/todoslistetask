@@ -1,5 +1,6 @@
 const Task = require("../models/ToDos");
 
+// To display lists function
 exports.displayList = (req, res) => {
   Task.find()
     .sort({ priorität: 1 })
@@ -8,6 +9,7 @@ exports.displayList = (req, res) => {
     });
 };
 
+// to add items function
 exports.addItemToList = (req, res) => {
   const newTask = new Task({
     task: req.body.task,
@@ -19,6 +21,7 @@ exports.addItemToList = (req, res) => {
   });
 };
 
+// to delete items function
 exports.deleteItem = (req, res) => {
   const taskId = req.params.id;
   //   console.log(itemId, "id");
@@ -27,12 +30,13 @@ exports.deleteItem = (req, res) => {
   });
 };
 
+// to update items function
 exports.updateItem = (req, res) => {
   taskId = req.body.id;
-  // console.log(req.body,"controller 32 ");
+  // console.log(req.body,"controller 36 ");
   if (req.body.task == "") {
     Task.findById(taskId, (err, doc) => {
-      // console.log(doc, "controller 35");
+      // console.log(doc, "controller 39");
       Task.findByIdAndUpdate(
         taskId,
         {
@@ -41,7 +45,7 @@ exports.updateItem = (req, res) => {
         },
         (err, doc) => {
           if (err) {
-            console.log(err, "controller 44");
+            console.log(err, "controller 48");
           } else {
             res.json({ msg: `${doc.task}, wurde aktulisiert` });
           }
@@ -57,7 +61,7 @@ exports.updateItem = (req, res) => {
       },
       (err, doc) => {
         if (err) {
-          console.log(err, "controller 58");
+          console.log(err, "controller 64");
         } else {
           res.json({ msg: `${doc.task} wurde aktulisiert. ` });
         }
@@ -66,14 +70,15 @@ exports.updateItem = (req, res) => {
   }
 };
 
+// done function
 exports.doneList = (req, res) => {
   const taskId = req.body.id;
   //   console.log(req.body.id, "Controller 18");
   Task.findByIdAndUpdate(taskId, { priorität: 5 }, (err, doc) => {
     if (err) {
-      console.log(err, "controller 75");
+      console.log(err, "controller 79");
     } else {
-      res.json({ msg: "Erfolgreich" });
+      res.json({ msg: "Erfolgreich Erledigt" });
     }
   });
 };

@@ -39,10 +39,11 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
     if (formContent.task !== "" || formContent.priorität !== null) {
       // axios
       axios.post("/update", formContent).then((res) => {
-        console.log(res.data, "Update");
+        // console.log(res.data, "Update");
         msgSetter(res.data.msg);
         // axios
         axios.get("/add").then((res) => {
+          // console.log(res.data, "Add");
           listSetter(res.data);
         });
       });
@@ -66,6 +67,7 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
     <div className="update-container">
       <form className="task-form" onSubmit={send}>
         <label htmlFor="task">Task :</label>
+        {/* Input */}
         <input
           type="text"
           id="task"
@@ -79,6 +81,7 @@ const Update = ({ id, task, invisible, msgSetter, listSetter }) => {
 
         <div className="range-container">
           <div className="range">
+            {/* Priority Range */}
             <input
               type="range"
               id="priorität"

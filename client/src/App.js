@@ -9,8 +9,8 @@ const App = () => {
     <div className="app-container">
       <h1 className="app-title">To-Do Liste Task</h1>
 
+      {/*Components */}
       <ToDosList />
-
       <Footer />
     </div>
   );

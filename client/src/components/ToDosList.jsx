@@ -34,9 +34,11 @@ const ToDosList = () => {
     axios
       .delete("/delete/" + id)
       .then((res) => {
+        // console.log(res.data);
         setMsgCenter(res.data.msg);
 
         axios.get("/add").then((res) => {
+          // console.log(res.data);
           setList(res.data);
         });
       })
@@ -64,7 +66,7 @@ const ToDosList = () => {
         <div className="message-center">
           {msgCenter === "" ? (
             <p className="status-text">
-              <b>Status</b> : Keine neue Aufgabe hinzugefügt
+              <b>Status</b> : Keine neue Aufgabe hinzugefügt..
             </p>
           ) : (
             <p className="status-text">
@@ -82,7 +84,7 @@ const ToDosList = () => {
         {/* using map method to display task lists */}
         {list.map((item, index) => {
           return (
-            // ToDo component
+            // Passing Data to DoneList Component
             <DoneList
               key={index}
               id={item._id}
